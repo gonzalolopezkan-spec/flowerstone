@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Villa Joviano — Alquiler en la Costa de la Luz | FlowerStone Real Estate</title>
+<meta name="description" content="Villa Joviano: elegante villa de dos plantas sobre una parcela privada de 700 m² en la Costa de la Luz. Hasta 8 huéspedes, piscina privada. Desde 330 € / noche.">
+<link rel="icon" href="assets/img/favicon.webp" type="image/webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="assets/img/joviano-hero.jpg" fetchpriority="high">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/villa.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="logo" href="index.html" aria-label="FlowerStone Real Estate — inicio">
+      <span class="logo__word">FlowerStone</span><span class="logo__sub">Real Estate</span>
+    </a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="index.html">Home</a>
+      <a href="alquiler.html" aria-current="page">Alquiler</a>
+      <a href="https://flowerstone.es/propiedades-en-venta/">Venta</a>
+      <a href="https://flowerstone.es/nosotros/">Nosotros</a>
+      <a href="https://flowerstone.es/contact/">Contacto</a>
+    </nav>
+    <a class="btn btn--bronze nav__cta" href="https://api.whatsapp.com/send?phone=611098971">Reservar</a>
+    <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="vhero">
+  <div class="vhero__media">
+    <img src="assets/img/joviano-hero.jpg" alt="Villa Joviano: fachada blanca de dos plantas con piscina privada y césped, frente al pinar" fetchpriority="high">
+  </div>
+  <div class="vhero__scrim" aria-hidden="true"></div>
+  <div class="container vhero__content">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="index.html">Home</a>
+      <span class="diamond" aria-hidden="true"></span>
+      <a href="alquiler.html">Alquiler</a>
+      <span class="diamond" aria-hidden="true"></span>
+      <span aria-current="page">Villa Joviano</span>
+    </nav>
+    <p class="eyebrow">La colección — Costa de la Luz</p>
+    <h1 class="vhero__title">Villa <em>Joviano</em></h1>
+    <p class="vhero__sub">El lugar perfecto para desconectar, disfrutar del sol y vivir una experiencia inolvidable en un entorno privilegiado.</p>
+    <p class="vhero__price"><strong>330&nbsp;€</strong> <span>/ noche · desde</span></p>
+  </div>
+</section>
+
+<!-- FICHA RÁPIDA -->
+<section class="facts" aria-label="Características principales">
+  <div class="container facts__grid">
+    <div class="facts__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 19v-1a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v1"/><circle cx="9.5" cy="7.5" r="3.2"/><path d="M21 19v-1a4 4 0 0 0-2.6-3.7"/><path d="M15 4.5a3.2 3.2 0 0 1 0 6"/></svg>
+      <div><strong>8 huéspedes</strong><small>capacidad</small></div>
+    </div>
+    <div class="facts__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16"/><path d="M4 9h5V4M20 15h-5v5"/></svg>
+      <div><strong>700 m²</strong><small>parcela privada</small></div>
+    </div>
+    <div class="facts__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11"/><path d="M4 15h16"/><path d="M10 21v-4h4v4"/></svg>
+      <div><strong>2 plantas</strong><small>diseño moderno</small></div>
+    </div>
+    <div class="facts__item">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 15c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M3 19c1.5 1.2 3 1.2 4.5 0s3-1.2 4.5 0 3 1.2 4.5 0 3-1.2 4.5 0"/><path d="M7 11V6.5A2.5 2.5 0 0 1 9.5 4h0A2.5 2.5 0 0 1 12 6.5V11"/></svg>
+      <div><strong>Piscina</strong><small>privada</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- DESCRIPCIÓN + TARJETA DE RESERVA -->
+<section class="vmain">
+  <div class="container vmain__grid">
+    <div class="vmain__text">
+      <p class="eyebrow reveal">La villa</p>
+      <span class="rule reveal" data-delay="1"></span>
+      <p class="vmain__quote reveal" data-delay="1">Comodidad, diseño moderno y espacios pensados para compartir momentos únicos.</p>
+      <p class="vmain__body reveal" data-delay="2">Villa Joviano es el lugar perfecto para desconectar, disfrutar del sol y vivir una experiencia inolvidable en un entorno privilegiado. Ubicada en una amplia parcela privada de 700&nbsp;m², esta elegante villa de dos plantas combina comodidad, diseño moderno y espacios pensados para compartir momentos únicos.</p>
+      <p class="vmain__body reveal" data-delay="3">Con capacidad para hasta 8 personas, es ideal tanto para familias como para grupos de amigos. El jardín, la piscina privada y la terraza exterior con zona de comedor hacen del exterior el verdadero corazón de la casa.</p>
+
+      <div class="amen reveal" data-delay="2">
+        <h3>La villa ofrece</h3>
+        <ul>
+          <li><span class="diamond" aria-hidden="true"></span>Piscina privada</li>
+          <li><span class="diamond" aria-hidden="true"></span>Jardín y césped en parcela de 700 m²</li>
+          <li><span class="diamond" aria-hidden="true"></span>Terraza con comedor exterior</li>
+          <li><span class="diamond" aria-hidden="true"></span>Zona de barbacoa</li>
+          <li><span class="diamond" aria-hidden="true"></span>Dormitorios en dos plantas</li>
+          <li><span class="diamond" aria-hidden="true"></span>Gestión y atención FlowerStone 24/7</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="vcard reveal" data-delay="2" aria-label="Reserva">
+      <div class="vcard__price"><strong>330&nbsp;€</strong> <span>/ noche · desde</span></div>
+      <dl class="vcard__rows">
+        <div class="vcard__row"><dt>Huéspedes</dt><dd>hasta 8</dd></div>
+        <div class="vcard__row"><dt>Parcela</dt><dd>700 m² privados</dd></div>
+        <div class="vcard__row"><dt>Piscina</dt><dd>privada</dd></div>
+        <div class="vcard__row"><dt>Zona</dt><dd>Costa de la Luz</dd></div>
+      </dl>
+      <div class="vcard__actions">
+        <a class="btn btn--bronze" data-magnetic href="https://api.whatsapp.com/send?phone=611098971">Reservar por WhatsApp</a>
+        <a class="btn btn--ghost" href="tel:+34611098971">+34 611 098 971</a>
+      </div>
+      <p class="vcard__note">Precio orientativo según temporada. Confirme disponibilidad y tarifa final con nuestro equipo.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="vgallery" aria-label="Galería">
+  <div class="container">
+    <p class="eyebrow reveal">Galería</p>
+    <span class="rule reveal" data-delay="1"></span>
+    <div class="vgallery__grid">
+      <figure class="vgallery__item reveal"><img src="assets/img/joviano-hero.jpg" alt="Vista general de Villa Joviano con piscina y jardín" loading="lazy"></figure>
+      <figure class="vgallery__item reveal" data-delay="1"><img src="assets/img/interior-1.jpg" alt="Interior de la colección FlowerStone: salón luminoso" loading="lazy"></figure>
+      <figure class="vgallery__item reveal" data-delay="2"><img src="assets/img/guadalajara-2.jpg" alt="Exterior y piscina de la colección FlowerStone" loading="lazy"></figure>
+      <figure class="vgallery__item reveal" data-delay="2"><img src="assets/img/interior-2.jpg" alt="Vista aérea de una villa de la colección FlowerStone" loading="lazy"></figure>
+      <figure class="vgallery__item reveal" data-delay="3"><img src="assets/img/irlanda-2.jpg" alt="Fachada y jardín de la colección FlowerStone" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACIÓN -->
+<section class="vloc">
+  <div class="container vloc__grid">
+    <div class="reveal">
+      <p class="eyebrow">La zona</p>
+      <span class="rule reveal" data-delay="1"></span>
+      <h2>Costa de la Luz, <em>entre pinares y calas</em></h2>
+      <p>Entre Roche y Conil de la Frontera, la Costa de la Luz combina playas abiertas de arena dorada, calas escondidas bajo el pinar y pueblos blancos a pocos minutos en coche. La luz de Cádiz hace el resto.</p>
+    </div>
+    <div class="vloc__media reveal" data-delay="1">
+      <img src="assets/img/francia-2.jpg" alt="Exterior de una villa FlowerStone en la Costa de la Luz" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container cta-band__inner">
+    <p class="eyebrow reveal">Hablemos</p>
+    <span class="rule reveal" data-delay="1"></span>
+    <h2 class="reveal" data-delay="1">Villa Joviano puede ser su próximo verano.</h2>
+    <div class="cta-band__actions reveal" data-delay="2">
+      <a class="btn btn--bronze" data-magnetic href="https://api.whatsapp.com/send?phone=611098971">WhatsApp</a>
+      <a class="btn btn--ghost" data-magnetic href="tel:+34611098971">+34 611 098 971</a>
+      <a class="btn btn--ghost" data-magnetic href="mailto:info@flowerstone.es">info@flowerstone.es</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer__wordmark">FlowerStone</p>
+    <div class="footer__grid">
+      <div class="footer__col">
+        <p class="eyebrow">FlowerStone</p>
+        <p>Villas escogidas una a una en la Costa de la Luz. Piedra y flor, cal blanca y pinos de Roche.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/flowerstone_realestate/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://www.facebook.com/p/FlowerStone-61554717839087/" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 8.5h2.5V5H14c-2.2 0-4 1.8-4 4v2H8v3.5h2V21h3.5v-6.5H16l.5-3.5h-3V9c0-.55.45-1 1-1Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/flowerstone-real-estate/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="16.5"/><circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none"/><path d="M11.5 16.5V12.8c0-1.1.9-2.1 2-2.1s2 .8 2 2.1v3.7"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav class="footer__col" aria-label="Footer">
+        <p class="eyebrow">Navegación</p>
+        <a href="index.html">Home</a>
+        <a href="alquiler.html">Alquiler</a>
+        <a href="https://flowerstone.es/propiedades-en-venta/">Venta</a>
+        <a href="https://flowerstone.es/nosotros/">Nosotros</a>
+        <a href="https://flowerstone.es/contact/">Contacto</a>
+      </nav>
+      <div class="footer__col">
+        <p class="eyebrow">Contacto</p>
+        <a href="tel:+34611098971">+34 611 098 971</a>
+        <a href="mailto:info@flowerstone.es">info@flowerstone.es</a>
+        <a href="https://api.whatsapp.com/send?phone=611098971" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 FlowerStone Real Estate</span>
+      <span class="footer__places">Roche <span class="diamond"></span> Conil de la Frontera <span class="diamond"></span> Cádiz</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

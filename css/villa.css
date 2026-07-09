@@ -1,0 +1,332 @@
+/* =========================================================================
+   Villa detail page (vista previa) — usa los tokens de css/styles.css
+   ========================================================================= */
+
+/* Hero ------------------------------------------------------------------ */
+.vhero {
+  position: relative;
+  min-height: 560px;
+  height: 82vh;
+  display: flex;
+  align-items: flex-end;
+  color: var(--paper);
+  overflow: hidden;
+}
+.vhero__media {
+  position: absolute;
+  inset: 0;
+}
+.vhero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: vhero-kb 2.5s var(--ease) both;
+}
+@keyframes vhero-kb {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+.vhero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18,26,22,.78) 0%, rgba(18,26,22,.25) 45%, rgba(18,26,22,.35) 100%);
+}
+.vhero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-block-end: clamp(2.5rem, 6vw, 4.5rem);
+}
+.vhero .breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-family: var(--font-body);
+  font-size: .78rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-block-end: clamp(1.5rem, 4vw, 2.5rem);
+}
+.vhero .breadcrumbs a {
+  color: rgba(248,247,242,.75);
+  transition: color .25s var(--ease);
+}
+.vhero .breadcrumbs a:hover { color: var(--bronze); }
+.vhero .breadcrumbs .diamond { border-color: rgba(248,247,242,.5); }
+.vhero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  line-height: 1.02;
+  font-weight: 400;
+  margin-block: .5rem .75rem;
+}
+.vhero__title em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--bronze);
+}
+.vhero__sub {
+  max-width: 52ch;
+  font-weight: 300;
+  color: rgba(248,247,242,.85);
+}
+.vhero__price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .5rem;
+  margin-block-start: 1.5rem;
+  padding: .8rem 1.4rem;
+  border: 1px solid rgba(248,247,242,.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(18,26,22,.35);
+}
+.vhero__price strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.vhero__price span {
+  font-size: .8rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(248,247,242,.75);
+}
+
+/* Facts strip ------------------------------------------------------------ */
+.facts {
+  background: var(--stone);
+  border-block: 1px solid rgba(18,26,22,.06);
+}
+.facts__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding-block: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+.facts__item {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  justify-content: center;
+}
+.facts__item svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--bronze);
+  flex: none;
+}
+.facts__item strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.facts__item small {
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+
+/* Main split: descripción + tarjeta de reserva --------------------------- */
+.vmain {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+.vmain__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 1fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: start;
+}
+.vmain__quote {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.35;
+  color: var(--ink);
+  margin-block: 1.5rem 1.75rem;
+}
+.vmain__body {
+  color: var(--mist);
+  max-width: 62ch;
+}
+.vmain__body + .vmain__body { margin-block-start: 1rem; }
+
+/* Amenities */
+.amen {
+  margin-block-start: 2.75rem;
+  padding-block-start: 2.25rem;
+  border-block-start: 1px solid var(--stone);
+}
+.amen h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-block-end: 1.25rem;
+}
+.amen ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .85rem 2rem;
+  padding: 0;
+  margin: 0;
+}
+.amen li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  color: var(--ink);
+  font-weight: 300;
+}
+.amen li .diamond { flex: none; }
+
+/* Booking card (sticky) */
+.vcard {
+  position: sticky;
+  top: calc(5.5rem + 1.5rem);
+  background: var(--paper);
+  border: 1px solid var(--stone);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  box-shadow: 0 24px 60px -32px rgba(18,26,22,.25);
+}
+.vcard__price {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  padding-block-end: 1.25rem;
+  border-block-end: 1px solid var(--stone);
+}
+.vcard__price strong {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 2.2rem;
+  color: var(--ink);
+}
+.vcard__price span {
+  font-size: .78rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.vcard__rows {
+  padding-block: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+.vcard__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: .92rem;
+}
+.vcard__row dt { color: var(--mist); font-weight: 300; }
+.vcard__row dd { color: var(--ink); margin: 0; }
+.vcard__actions {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-block-start: .5rem;
+}
+.vcard__actions .btn { text-align: center; justify-content: center; display: inline-flex; }
+.vcard__note {
+  margin-block-start: 1.1rem;
+  font-size: .78rem;
+  color: var(--mist);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* Galería ----------------------------------------------------------------- */
+.vgallery {
+  padding-block: 0 clamp(4rem, 8vw, 7rem);
+}
+.vgallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: clamp(180px, 24vw, 320px);
+  gap: clamp(.75rem, 1.5vw, 1.25rem);
+  margin-block-start: 2.25rem;
+}
+.vgallery__item {
+  overflow: hidden;
+  position: relative;
+}
+.vgallery__item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.vgallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s var(--ease);
+}
+.vgallery__item:hover img { transform: scale(1.05); }
+.vgallery__item::after {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(248,247,242,.55);
+  opacity: 0;
+  transition: opacity .4s var(--ease);
+  pointer-events: none;
+}
+.vgallery__item:hover::after { opacity: 1; }
+
+/* Localización ------------------------------------------------------------ */
+.vloc {
+  background: var(--pine);
+  color: var(--paper);
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+}
+.vloc__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+.vloc h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.15;
+  margin-block: 1.25rem 1rem;
+}
+.vloc h2 em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--bronze);
+}
+.vloc p { color: rgba(248,247,242,.78); font-weight: 300; max-width: 52ch; }
+.vloc__media {
+  overflow: hidden;
+}
+.vloc__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+/* Responsive --------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .vmain__grid { grid-template-columns: 1fr; }
+  .vcard { position: static; }
+}
+@media (max-width: 768px) {
+  .facts__grid { grid-template-columns: repeat(2, 1fr); row-gap: 1.75rem; }
+  .facts__item { justify-content: flex-start; }
+  .vloc__grid { grid-template-columns: 1fr; }
+  .vgallery__grid { grid-template-columns: 1fr 1fr; }
+  .vgallery__item:first-child { grid-column: span 2; grid-row: span 1; }
+}
+@media (max-width: 540px) {
+  .amen ul { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vhero__media img { animation: none; }
+  .vgallery__item img { transition: none; }
+}
