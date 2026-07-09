@@ -1,0 +1,471 @@
+/* ==========================================================================
+   alquiler.css — estilos EXCLUSIVOS de la página de Alquiler.
+   No redefine clases del contrato compartido (.nav, .btn, .eyebrow, .rule,
+   .diamond, .reveal/.in-view, .villa-card + subelementos, .cta-band,
+   .footer, .container). Usa los tokens definidos en css/styles.css vía var().
+   ========================================================================== */
+
+/* Variable local de apoyo: alto aproximado de la nav fija, usada solo para
+   calcular el offset de la barra de filtros sticky. No es un token de marca,
+   es una medida de layout propia de esta página. */
+:root {
+  --nav-h: 5.5rem;
+}
+
+/* Red de seguridad anti-scroll horizontal para elementos con solape
+   (spotlight) — complementa el overflow-x:clip global de styles.css. */
+.page-hero,
+.spotlight {
+  overflow-x: clip;
+}
+
+/* --------------------------------------------------------------------
+   1. HERO DE PÁGINA
+   -------------------------------------------------------------------- */
+.page-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  isolation: isolate;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url('../assets/img/australia-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.08);
+  animation: pageHeroKenBurns 2.5s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+@keyframes pageHeroKenBurns {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1); }
+}
+
+.page-hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg,
+    rgba(18, 26, 22, .72) 0%,
+    rgba(18, 26, 22, .32) 50%,
+    rgba(18, 26, 22, .68) 100%);
+}
+
+.page-hero__inner {
+  position: relative;
+  width: 100%;
+  padding-block: clamp(6.5rem, 16vh, 9.5rem) clamp(2.75rem, 5vw, 3.75rem);
+  color: var(--paper);
+}
+
+.page-hero__title {
+  margin: .9rem 0 1.1rem;
+  color: var(--paper);
+  font-family: 'Marcellus', serif;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  line-height: 1.08;
+}
+
+.page-hero__title em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--bronze);
+}
+
+.page-hero__sub {
+  max-width: 52ch;
+  color: rgba(248, 247, 242, .88);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* Migas */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: 1.85rem;
+  color: rgba(248, 247, 242, .75);
+  font-family: 'Jost', sans-serif;
+  font-size: .78rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.breadcrumbs a {
+  color: rgba(248, 247, 242, .75);
+  text-decoration: none;
+  transition: color .25s cubic-bezier(.25,.8,.25,1);
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--bronze);
+}
+
+.breadcrumbs [aria-current] {
+  color: var(--paper);
+}
+
+/* --------------------------------------------------------------------
+   2. INTRO DE COLECCIÓN
+   -------------------------------------------------------------------- */
+.villas-section {
+  background: var(--paper);
+}
+
+.villas-section__intro {
+  padding-block: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 4vw, 3rem);
+}
+
+.villas-section__title {
+  max-width: 22ch;
+  margin-top: .9rem;
+  color: var(--ink);
+  font-family: 'Marcellus', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+}
+
+/* --------------------------------------------------------------------
+   3. BARRA DE FILTROS (sticky)
+   -------------------------------------------------------------------- */
+.filter-bar {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 40;
+  background: rgba(248, 247, 242, .92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-block: 1px solid var(--stone);
+}
+
+.filter-bar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.filter-chip {
+  cursor: pointer;
+  border: 1px solid var(--stone);
+  border-radius: 999px;
+  background: transparent;
+  padding: .55rem 1.1rem;
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition:
+    background-color .25s cubic-bezier(.25,.8,.25,1),
+    color .25s cubic-bezier(.25,.8,.25,1),
+    border-color .25s cubic-bezier(.25,.8,.25,1);
+}
+
+.filter-chip:hover {
+  border-color: var(--bronze);
+  color: var(--bronze);
+}
+
+.filter-chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+}
+
+.filter-count {
+  color: var(--mist);
+  font-family: 'Jost', sans-serif;
+  font-size: .85rem;
+  white-space: nowrap;
+}
+
+.filter-count strong {
+  color: var(--ink);
+  font-family: 'Marcellus', serif;
+  font-size: 1.05rem;
+  font-style: normal;
+}
+
+@media (max-width: 640px) {
+  .filter-bar {
+    position: static;
+  }
+  .filter-bar__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-count {
+    order: -1;
+  }
+}
+
+/* --------------------------------------------------------------------
+   4. GRID DE VILLAS
+   -------------------------------------------------------------------- */
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.75rem, 3vw, 2.5rem);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+@media (max-width: 900px) {
+  .villa-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .villa-grid { grid-template-columns: 1fr; }
+}
+
+/* Modificador de tarjeta para el grid (imagen 4:3, no redefine .villa-card) */
+.villa-card--grid .villa-card__media {
+  aspect-ratio: 4 / 3;
+}
+
+.villa-card--grid .villa-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.villa-card--grid {
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+/* Icono de ubicación dentro de .villa-card__meta (elemento propio, no
+   redefine .villa-card__meta en sí) */
+.villa-card__meta {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.villa-card__meta svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--bronze);
+}
+
+/* Descripción corta bajo el nombre — elemento propio de esta página */
+.villa-card__desc {
+  margin: .5rem 0 .85rem;
+  color: var(--mist);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: .95rem;
+  line-height: 1.55;
+}
+
+/* "Ver villa →" — elemento propio de esta página, con micro-interacción
+   de deslizamiento en hover/focus de la tarjeta */
+.villa-card__cta {
+  display: inline-flex;
+  color: var(--bronze);
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: transform .3s cubic-bezier(.25,.8,.25,1);
+}
+
+.villa-card--grid:hover .villa-card__cta,
+.villa-card--grid:focus-visible .villa-card__cta {
+  transform: translateX(4px);
+}
+
+/* Estado de filtrado — fade + scale (0.3s) */
+.villa-card--out {
+  opacity: 0;
+  transform: scale(.93);
+  pointer-events: none;
+}
+
+/* Red de seguridad: si el reset global no cubre [hidden] */
+.villa-grid [hidden] {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------
+   5. SPOTLIGHT VILLA SUECIA
+   -------------------------------------------------------------------- */
+.spotlight {
+  background: var(--pine);
+  padding-block: clamp(4rem, 8vw, 7rem);
+  color: var(--paper);
+}
+
+.spotlight__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.spotlight__media {
+  position: relative;
+}
+
+.spotlight__img--main {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.spotlight__img--secondary {
+  position: absolute;
+  right: -6%;
+  bottom: -10%;
+  width: 45%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 8px solid var(--paper);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .45);
+}
+
+.spotlight__content h2 {
+  margin: .9rem 0 1.25rem;
+  color: var(--paper);
+  font-family: 'Marcellus', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.spotlight__desc {
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+  color: rgba(248, 247, 242, .85);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.spotlight__price {
+  margin-bottom: 1.85rem;
+  color: var(--bronze);
+  font-family: 'Marcellus', serif;
+  font-size: 1.85rem;
+}
+
+.spotlight__price span {
+  color: rgba(248, 247, 242, .7);
+  font-family: 'Jost', sans-serif;
+  font-size: .85rem;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 900px) {
+  .spotlight__inner {
+    grid-template-columns: 1fr;
+  }
+  .spotlight__media {
+    margin-bottom: 1.5rem;
+  }
+  .spotlight__img--secondary {
+    position: static;
+    width: 62%;
+    margin-top: -3rem;
+    margin-left: auto;
+  }
+}
+
+/* --------------------------------------------------------------------
+   6. NOTA DE SERVICIO
+   -------------------------------------------------------------------- */
+.care-note {
+  background: var(--paper);
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+
+.care-note__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.care-note__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--stone);
+}
+
+.care-note__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--bronze);
+  border-radius: 50%;
+  color: var(--bronze);
+}
+
+.care-note__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.care-note__item p {
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .care-note__list {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------
+   Accesibilidad de movimiento — solo estilos propios de esta página
+   -------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .page-hero__bg {
+    animation: none;
+    transform: scale(1);
+  }
+  .villa-card--grid,
+  .villa-card--out,
+  .villa-card__cta,
+  .filter-chip,
+  .breadcrumbs a {
+    transition: none;
+  }
+}

@@ -1,0 +1,12 @@
+# OS / editor
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Node (por si se añade tooling más adelante)
+node_modules/
+npm-debug.log*
+
+# Logs y temporales
+*.log
+*.tmp
